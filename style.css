@@ -567,3 +567,288 @@ body::before{
 .project-description{font-size:clamp(20px,2.3vw,34px);line-height:1.25;letter-spacing:-.025em;margin:0}
 .project-back{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:14px 20px;font-size:10px;letter-spacing:.12em;margin-top:30px}
 @media(max-width:800px){.project-page .project-nav{padding:20px 6vw}.project-hero{padding:110px 6vw 45px}.project-title{font-size:18vw;margin-bottom:35px}.project-main-image{border-radius:18px}.project-info{grid-template-columns:1fr;gap:35px;padding:55px 0 80px}.project-description{font-size:21px}.project-link:hover{transform:none}}
+
+/* V28 — mobile layout rebuild
+   Keeps the desktop art direction but gives the phone layout its own composition. */
+@media (max-width:800px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+
+  /* NAV */
+  .nav{
+    height:72px;
+    padding:0 18px;
+    grid-template-columns:auto 1fr;
+    gap:14px;
+  }
+  .nav-name{
+    font-size:15px;
+    line-height:1;
+    white-space:nowrap;
+  }
+  .nav-links{
+    min-width:0;
+    justify-content:flex-end;
+    align-items:center;
+    gap:clamp(9px,3vw,15px);
+    overflow:visible;
+  }
+  .nav-links a{
+    font-size:8px;
+    letter-spacing:.035em;
+    white-space:nowrap;
+  }
+  .nav-cta{display:none}
+
+  /* HERO */
+  .hero{
+    height:860px;
+    min-height:860px;
+    padding:0 18px;
+    overflow:hidden;
+  }
+  .hero-role{
+    top:94px;
+    left:18px;
+    font-size:8px;
+    letter-spacing:.11em;
+    white-space:nowrap;
+  }
+  .hero-topline{
+    top:91px;
+    right:18px;
+    font-size:10px;
+  }
+  .hero-title{
+    left:18px;
+    top:190px;
+    margin:0;
+    font-size:21vw;
+    line-height:.78;
+    letter-spacing:-.10em;
+    white-space:nowrap;
+    z-index:1;
+  }
+  .hero-portrait{
+    top:145px;
+    left:50%;
+    width:78vw;
+    height:420px;
+    z-index:2;
+  }
+  .hero-portrait img{
+    height:100%;
+    width:auto;
+    max-width:none;
+  }
+  .hero-copy{
+    left:18px;
+    right:18px;
+    top:595px;
+    bottom:auto;
+    max-width:320px;
+    font-size:10px;
+    line-height:1.7;
+    z-index:5;
+  }
+  .hero>.pill{
+    left:18px;
+    right:auto;
+    top:688px;
+    bottom:auto;
+    padding:13px 17px;
+    font-size:9px;
+    z-index:5;
+  }
+  .hero-scroll{display:none}
+
+  /* CLIENTS — one compact row on phones, no overlap/clipping */
+  .hero-clients{
+    left:18px;
+    right:18px;
+    bottom:16px;
+    padding:0;
+    z-index:7;
+  }
+  .hero-clients .section-label{
+    margin:0 0 8px;
+    font-size:8px;
+  }
+  .hero-clients .client-row{
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:6px;
+  }
+  .hero-clients .client-logo,
+  .hero-clients .client-logo:nth-child(5){
+    grid-column:auto;
+    width:auto;
+    min-width:0;
+    height:52px;
+    min-height:52px;
+    padding:7px 5px;
+    border-radius:13px;
+  }
+  .hero-clients .client-logo img{
+    width:100%;
+    height:28px;
+    max-width:none;
+  }
+
+  /* PROJECTS */
+  .projects{
+    padding:72px 18px 95px;
+  }
+  .projects-head{
+    margin-bottom:45px;
+  }
+  .projects-head h2{
+    font-size:19vw;
+    line-height:.82;
+  }
+  .projects-head p{
+    max-width:330px;
+    margin-top:22px;
+    font-size:10px;
+    line-height:1.7;
+  }
+  .project-stack{
+    gap:16px;
+    padding-bottom:0;
+  }
+  .project-card,
+  .project-card:nth-child(1),
+  .project-card:nth-child(2),
+  .project-card:nth-child(3),
+  .project-card:nth-child(4),
+  .project-card:nth-child(5){
+    position:relative;
+    top:auto;
+    margin:0;
+    transform:none;
+    aspect-ratio:16/10;
+    min-height:0;
+    height:auto;
+    display:grid;
+    grid-template-columns:46px 1fr 38px;
+    gap:9px;
+    padding:16px 14px;
+    border-radius:20px;
+  }
+  .project-card:hover{transform:none}
+  .project-media{object-position:center}
+  .p-meta{gap:7px}
+  .p-meta b{font-size:24px}
+  .p-meta span{font-size:5.5px;padding-left:7px;line-height:1.2}
+  .project-card h3{
+    min-width:0;
+    font-size:clamp(22px,7.4vw,31px);
+    line-height:.92;
+    letter-spacing:-.055em;
+  }
+  .project-link{max-width:100%}
+  .tm-mark{font-size:.22em}
+  .arrow{width:34px;height:34px;font-size:13px}
+
+  /* ABOUT */
+  .about{padding:72px 18px}
+  .about-grid{gap:32px}
+  .about-visual{height:430px;border-radius:24px}
+  .about-caption{left:20px;bottom:20px}
+  .bigword{font-size:21vw;margin-bottom:32px}
+  .about-text p{font-size:12px;line-height:1.75}
+
+  /* SERVICES */
+  .services{padding:72px 18px}
+  .service-list>div{
+    grid-template-columns:34px 1fr;
+    gap:10px;
+    padding:22px 0;
+  }
+  .service-list h3{font-size:27px;line-height:.95}
+  .service-list p{grid-column:2;font-size:10px;line-height:1.65;margin:0}
+
+  /* CONTACT */
+  .contact{min-height:760px;padding:80px 18px 32px}
+  .contact-title{font-size:20vw;line-height:.8}
+  .contact>p{font-size:11px;margin-top:28px}
+  .contact-mail{font-size:7vw;overflow-wrap:anywhere}
+  .contact-bottom{padding-top:70px;align-items:flex-start;gap:16px;font-size:8px}
+
+  /* PROJECT DETAIL PAGES */
+  .project-page .project-nav{
+    padding:20px 18px;
+    font-size:9px;
+  }
+  .project-hero{
+    min-height:auto;
+    padding:105px 18px 35px;
+  }
+  .project-kicker{font-size:8px;margin-bottom:14px}
+  .project-title{
+    font-size:17vw;
+    line-height:.84;
+    margin-bottom:28px;
+    overflow-wrap:anywhere;
+  }
+  .project-main-image{border-radius:16px}
+  .project-info{padding:42px 0 70px;gap:26px}
+  .project-meta{font-size:8px}
+  .project-description{font-size:19px;line-height:1.28}
+  .project-back{font-size:8px;padding:12px 16px}
+}
+
+@media (max-width:360px){
+  .nav-links{gap:7px}
+  .nav-links a{font-size:7px}
+  .hero-title{font-size:20vw}
+  .hero-portrait{width:82vw;height:400px}
+  .hero-copy{top:575px}
+  .hero>.pill{top:675px}
+}
+
+
+/* V28 FINAL — dedicated phone composition */
+@media (max-width:800px){
+  .nav{height:72px;padding:0 18px;grid-template-columns:auto 1fr;gap:12px}
+  .nav-name{font-size:14px;line-height:1;white-space:nowrap}
+  .nav-links{min-width:0;justify-content:flex-end;gap:clamp(8px,2.7vw,13px)}
+  .nav-links a{font-size:7.5px;letter-spacing:.025em;white-space:nowrap}
+  .nav-cta{display:none}
+
+  .hero{height:930px;min-height:930px;padding:0 18px;overflow:hidden}
+  .hero-role{top:94px;left:18px;font-size:8px;letter-spacing:.10em;white-space:nowrap}
+  .hero-topline{top:91px;right:18px;font-size:10px}
+
+  /* On phones Hello sits above the portrait instead of colliding with it. */
+  .hero-title{left:18px;top:150px;margin:0;font-size:20vw;line-height:.8;letter-spacing:-.10em;white-space:nowrap;z-index:1}
+  .hero-portrait{top:235px;left:50%;width:72vw;height:400px;z-index:2}
+  .hero-portrait img{height:100%;width:auto;max-width:none}
+
+  .hero-copy{left:18px;right:18px;top:650px;bottom:auto;max-width:325px;font-size:10px;line-height:1.7;z-index:5}
+  .hero>.pill{left:18px;right:auto;top:742px;bottom:auto;padding:13px 17px;font-size:9px;z-index:5}
+  .hero-scroll{display:none}
+
+  /* Clients become a clean normal section on mobile, so they never overlap the CTA. */
+  .hero-clients{position:absolute;left:18px;right:18px;bottom:18px;padding:0;z-index:7}
+  .hero-clients .section-label{margin:0 0 8px;font-size:8px}
+  .hero-clients .client-row{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+  .hero-clients .client-logo,.hero-clients .client-logo:nth-child(5){grid-column:auto;width:auto;min-width:0;height:52px;min-height:52px;padding:7px 4px;border-radius:13px}
+  .hero-clients .client-logo img{width:100%;height:27px;max-width:none}
+
+  .projects{padding:72px 18px 95px}
+  .projects-head{margin-bottom:45px}
+  .projects-head h2{font-size:18vw;line-height:.82}
+  .projects-head p{max-width:330px;margin-top:22px;font-size:10px;line-height:1.7}
+  .project-stack{gap:16px;padding-bottom:0}
+  .project-card,.project-card:nth-child(1),.project-card:nth-child(2),.project-card:nth-child(3),.project-card:nth-child(4),.project-card:nth-child(5){position:relative;top:auto;margin:0;transform:none;aspect-ratio:16/10;min-height:0;height:auto;display:grid;grid-template-columns:46px 1fr 38px;gap:9px;padding:16px 14px;border-radius:20px}
+  .project-card:hover{transform:none}
+  .p-meta{gap:7px}.p-meta b{font-size:24px}.p-meta span{font-size:5.5px;padding-left:7px;line-height:1.2}
+  .project-card h3{min-width:0;font-size:clamp(22px,7.4vw,31px);line-height:.92;letter-spacing:-.055em}
+  .project-link{max-width:100%}.arrow{width:34px;height:34px;font-size:13px}
+
+  .about{padding:72px 18px}.about-grid{gap:32px}.about-visual{height:430px;border-radius:24px}.about-caption{left:20px;bottom:20px}.bigword{font-size:21vw;margin-bottom:32px}.about-text p{font-size:12px;line-height:1.75}
+  .services{padding:72px 18px}.service-list>div{grid-template-columns:34px 1fr;gap:10px;padding:22px 0}.service-list h3{font-size:27px;line-height:.95}.service-list p{grid-column:2;font-size:10px;line-height:1.65;margin:0}
+  .contact{min-height:760px;padding:80px 18px 32px}.contact-title{font-size:20vw;line-height:.8}.contact>p{font-size:11px;margin-top:28px}.contact-mail{font-size:7vw;overflow-wrap:anywhere}.contact-bottom{padding-top:70px;align-items:flex-start;gap:16px;font-size:8px}
+
+  .project-page .project-nav{padding:20px 18px;font-size:9px}.project-hero{min-height:auto;padding:105px 18px 35px}.project-kicker{font-size:8px;margin-bottom:14px}.project-title{font-size:17vw;line-height:.84;margin-bottom:28px;overflow-wrap:anywhere}.project-main-image{border-radius:16px}.project-info{padding:42px 0 70px;gap:26px}.project-meta{font-size:8px}.project-description{font-size:19px;line-height:1.28}.project-back{font-size:8px;padding:12px 16px}
+}
+@media(max-width:360px){.nav-links{gap:6px}.nav-links a{font-size:7px}.hero-title{font-size:19vw}.hero-portrait{width:76vw;height:385px}.hero-copy{top:640px}.hero>.pill{top:730px}}
