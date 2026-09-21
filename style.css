@@ -237,3 +237,312 @@ body::before{
   background-size:3px 3px,5px 5px; mix-blend-mode:soft-light;
 }
 @media(max-width:800px){body{background-attachment:scroll !important;}}
+
+
+/* V21 — Hero portrait + clients visible on first viewport */
+.hero{
+  min-height:100vh;
+  height:100vh;
+  padding:110px 7vw 0;
+  isolation:isolate;
+}
+.hero-portrait{
+  position:absolute;
+  z-index:1;
+  left:50%;
+  top:82px;
+  transform:translateX(-50%);
+  height:min(70vh,720px);
+  width:min(54vw,720px);
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  pointer-events:none;
+}
+.hero-portrait::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:3%;
+  width:72%;
+  height:54%;
+  transform:translateX(-50%);
+  background:radial-gradient(ellipse,rgba(130,138,150,.20),transparent 68%);
+  filter:blur(35px);
+  z-index:-1;
+}
+.hero-portrait img{
+  display:block;
+  width:auto;
+  height:100%;
+  max-width:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  filter:grayscale(1) contrast(1.08) brightness(.90) drop-shadow(0 25px 55px rgba(0,0,0,.42));
+  animation:portraitReveal 1.15s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes portraitReveal{
+  0%{opacity:0;transform:translateY(35px) scale(.97);filter:grayscale(1) contrast(1.08) brightness(.90) blur(9px)}
+  100%{opacity:1;transform:translateY(0) scale(1);filter:grayscale(1) contrast(1.08) brightness(.90) blur(0) drop-shadow(0 25px 55px rgba(0,0,0,.42))}
+}
+.hero-title{
+  position:absolute;
+  z-index:2;
+  left:7vw;
+  top:27%;
+  margin:0;
+  font-size:clamp(86px,12vw,190px);
+  opacity:.94;
+  text-shadow:0 12px 50px rgba(0,0,0,.35);
+}
+.hero-copy{
+  top:39%;
+  right:7vw;
+  z-index:4;
+}
+.hero>.pill{top:51%;right:7vw}
+.hero-role,.hero-topline{z-index:6}
+.hero-scroll{z-index:6}
+.hero-clients{
+  position:absolute;
+  z-index:7;
+  left:7vw;
+  right:7vw;
+  bottom:24px;
+  padding-top:8px;
+}
+.hero-clients .section-label{
+  margin:0 0 10px;
+  color:#858b92;
+}
+.hero-clients .client-row{
+  margin-top:0;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:14px;
+}
+.hero-clients .client-logo{
+  min-height:66px;
+  height:66px;
+  padding:10px 18px;
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018));
+  opacity:0;
+  transform:translateY(18px) scale(.96);
+  filter:blur(4px);
+}
+.hero-clients .client-logo img{
+  width:min(100%,135px);
+  height:42px;
+}
+.hero-clients .client-logo.show{
+  opacity:1;
+  transform:none;
+  filter:blur(0);
+}
+@media(max-width:800px){
+  .hero{
+    height:auto;
+    min-height:900px;
+    padding:100px 6vw 0;
+  }
+  .hero-portrait{
+    top:105px;
+    height:56vh;
+    width:90vw;
+  }
+  .hero-title{
+    left:6vw;
+    top:24%;
+    font-size:24vw;
+  }
+  .hero-copy{
+    right:6vw;
+    top:auto;
+    bottom:235px;
+  }
+  .hero>.pill{top:auto;bottom:170px;right:6vw}
+  .hero-clients{
+    left:6vw;
+    right:6vw;
+    bottom:20px;
+  }
+  .hero-clients .client-row{grid-template-columns:repeat(2,1fr);gap:10px}
+  .hero-clients .client-logo{min-height:54px;height:54px;padding:8px 12px;border-radius:15px}
+  .hero-clients .client-logo img{height:34px;width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-portrait img{animation:none}
+}
+
+/* V22 — Hero refined to match the supplied art direction.
+   The supplied transparent portrait is used directly; no generated artwork. */
+.hero{
+  min-height:100vh;
+  height:100vh;
+  padding:110px 7vw 0;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse 70% 75% at 52% 42%, rgba(70,78,88,.17), transparent 62%),
+    radial-gradient(ellipse 55% 60% at 90% 25%, rgba(95,102,112,.10), transparent 68%),
+    linear-gradient(145deg,#111316 0%,#171a1e 45%,#0b0d10 100%);
+}
+.hero-title{
+  z-index:1;
+  left:7vw;
+  top:24%;
+  margin:0;
+  font-size:clamp(110px,17vw,285px);
+  line-height:.76;
+  letter-spacing:-.105em;
+  opacity:.96;
+}
+.hero-portrait{
+  z-index:2;
+  left:50%;
+  top:86px;
+  height:min(82vh,790px);
+  width:min(52vw,790px);
+  transform:translateX(-50%);
+  align-items:flex-end;
+}
+.hero-portrait::before{
+  width:82%;
+  height:58%;
+  bottom:1%;
+  background:radial-gradient(ellipse,rgba(105,113,124,.16),transparent 68%);
+  filter:blur(42px);
+}
+.hero-portrait img{
+  position:relative;
+  z-index:2;
+  height:100%;
+  width:auto;
+  max-width:none;
+  object-fit:contain;
+  object-position:center bottom;
+  filter:grayscale(1) contrast(1.07) brightness(.91) drop-shadow(0 28px 55px rgba(0,0,0,.46));
+}
+.hero-copy{
+  top:49%;
+  right:9vw;
+  max-width:285px;
+  font-size:12px;
+  line-height:1.72;
+  z-index:4;
+}
+.hero>.pill{
+  top:62%;
+  right:9vw;
+  z-index:4;
+}
+.hero-role{z-index:6}
+.hero-topline{z-index:6}
+.hero-scroll{display:none}
+.hero-clients{
+  left:6vw;
+  right:6vw;
+  bottom:18px;
+  z-index:7;
+  padding-top:0;
+}
+.hero-clients .section-label{
+  margin:0 0 12px;
+  font-size:9px;
+  letter-spacing:.20em;
+}
+.hero-clients .client-row{
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:18px;
+}
+.hero-clients .client-logo{
+  height:86px;
+  min-height:86px;
+  padding:12px 20px;
+  border-radius:24px;
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.022));
+  border-color:rgba(255,255,255,.14);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 16px 45px rgba(0,0,0,.22);
+}
+.hero-clients .client-logo img{
+  width:min(100%,175px);
+  height:54px;
+}
+@media(max-width:1100px) and (min-width:801px){
+  .hero-title{font-size:15vw}
+  .hero-portrait{height:75vh;width:58vw}
+  .hero-copy{right:6vw;max-width:235px}
+  .hero>.pill{right:6vw}
+  .hero-clients .client-row{gap:10px}
+  .hero-clients .client-logo{padding:10px;border-radius:18px}
+}
+@media(max-width:800px){
+  .hero{
+    height:auto;
+    min-height:900px;
+    padding:100px 6vw 0;
+  }
+  .hero-title{
+    left:6vw;
+    top:20%;
+    font-size:26vw;
+    line-height:.8;
+  }
+  .hero-portrait{
+    top:122px;
+    height:57vh;
+    width:96vw;
+  }
+  .hero-copy{
+    right:6vw;
+    left:6vw;
+    top:auto;
+    bottom:245px;
+    max-width:310px;
+    font-size:11px;
+  }
+  .hero>.pill{
+    top:auto;
+    bottom:177px;
+    right:6vw;
+  }
+  .hero-clients{
+    left:6vw;
+    right:6vw;
+    bottom:18px;
+  }
+  .hero-clients .client-row{
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
+  }
+  .hero-clients .client-logo{
+    height:55px;
+    min-height:55px;
+    padding:7px 10px;
+    border-radius:15px;
+  }
+  .hero-clients .client-logo img{height:34px;width:100%}
+  .hero-clients .client-logo:nth-child(5){grid-column:1/-1}
+}
+
+
+/* V23 — subtle portrait parallax + separated L's in Hello */
+.hero-portrait{
+  --parallax-y:0px;
+  transform:translateX(-50%) translateY(var(--parallax-y));
+  will-change:transform;
+}
+.hello-l{
+  display:inline-block;
+  position:relative;
+  transition:transform .7s cubic-bezier(.16,1,.3,1);
+}
+.hero-title .l-one{margin-right:0;}
+.hero-title .l-two{margin-left:.012em;}
+.hero-title .hello-mark{display:inline-block;}
+@media(max-width:800px){
+  .hero-portrait{transform:translateX(-50%) translateY(var(--parallax-y));}
+  .hero-title .l-two{margin-left:.008em;}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-portrait{--parallax-y:0px !important;}
+}

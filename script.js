@@ -22,5 +22,35 @@ const clientObserver=new IntersectionObserver((entries)=>{
   });
 },{threshold:.18});
 
-const clientsSection=document.querySelector('.clients');
-if(clientsSection) clientObserver.observe(clientsSection);
+const clientsSection=document.querySelector('.hero-clients');
+if(clientsSection){
+  clientsSection.querySelectorAll('.client-logo').forEach((logo,i)=>{
+    window.setTimeout(()=>logo.classList.add('show'), 420 + i*110);
+  });
+}
+
+
+// V23 — subtle scroll parallax on the hero portrait.
+(() => {
+  const portrait = document.querySelector('.hero-portrait');
+  const hero = document.querySelector('.hero');
+  if (!portrait || !hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let ticking = false;
+  const updateParallax = () => {
+    const rect = hero.getBoundingClientRect();
+    const progress = Math.max(0, Math.min(1, -rect.top / Math.max(1, hero.offsetHeight)));
+    const shift = progress * -38;
+    portrait.style.setProperty('--parallax-y', `${shift.toFixed(2)}px`);
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive:true });
+  updateParallax();
+})();
