@@ -1299,3 +1299,82 @@ body::before{
     transform:none !important;
   }
 }
+
+/* V58 — SEO landing page: Artiste 3D à Nantes */
+.seo-page{background:#17181b;color:#f4f4f4;min-height:100vh}
+.seo-nav{position:fixed;top:0;left:0;right:0;height:78px;z-index:25;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 4.2vw;background:rgba(8,10,13,.64);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.09)}
+.seo-nav a{color:#eee;text-decoration:none}
+.seo-nav-name{font-size:17px;font-weight:900;letter-spacing:-.045em}
+.seo-nav-links{display:flex;gap:34px}
+.seo-nav-links a,.seo-nav-cta{font-size:10px;letter-spacing:.1em}
+.seo-nav a:hover{opacity:.58}
+.seo-nav-cta{justify-self:end;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:12px 16px}
+.seo-hero{padding:150px 7vw 100px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.seo-kicker,.seo-label{font-size:9px;letter-spacing:.16em;color:#8d8f94}
+.seo-hero-grid{display:grid;grid-template-columns:1.15fr .72fr;gap:7vw;align-items:center;margin-top:35px}
+.seo-hero h1{font-size:clamp(74px,11vw,175px);line-height:.79;letter-spacing:-.085em;font-weight:900;margin:0}
+.seo-hero h1 span{color:#a8abb0}
+.seo-lead{font-size:clamp(18px,2vw,28px);line-height:1.28;letter-spacing:-.025em;max-width:680px;color:#c8c9cb;margin:42px 0 0}
+.seo-actions{display:flex;align-items:center;gap:28px;margin-top:38px}
+.seo-pill{display:inline-flex;align-items:center;border-radius:999px;padding:14px 19px;text-decoration:none;font-size:9px;letter-spacing:.12em}
+.seo-pill-light{background:#f4f4f4;color:#101114}
+.seo-text-link{color:#eee;text-decoration:none;font-size:9px;letter-spacing:.12em}
+.seo-portrait-card{position:relative;min-height:560px;border:1px solid rgba(255,255,255,.12);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));overflow:hidden;box-shadow:0 35px 90px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.07);display:flex;align-items:flex-end;justify-content:center}
+.seo-portrait-card:before{content:"";position:absolute;inset:12%;background:radial-gradient(circle,rgba(130,136,150,.17),transparent 68%);filter:blur(20px)}
+.seo-portrait-card img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center bottom;mix-blend-mode:screen;filter:contrast(1.02)}
+.seo-portrait-label{position:absolute;z-index:2;left:22px;bottom:20px;font-size:8px;line-height:1.5;letter-spacing:.13em;color:#b9babd}
+.seo-section{padding:125px 7vw}
+.seo-intro{border-top:1px solid rgba(255,255,255,.08)}
+.seo-two-col{display:grid;grid-template-columns:1fr 1fr;gap:9vw;margin-top:45px}
+.seo-two-col h2,.seo-process-head h2{font-size:clamp(50px,6.3vw,100px);line-height:.82;letter-spacing:-.075em;font-weight:900;margin:0}
+.seo-copy{max-width:650px;color:#aeb0b5;font-size:clamp(15px,1.4vw,20px);line-height:1.65;letter-spacing:-.01em}
+.seo-copy p{margin:0 0 24px}
+.seo-copy strong{color:#f4f4f4;font-weight:500}
+.seo-expertise{background:rgba(255,255,255,.018);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.seo-service-grid{display:grid;grid-template-columns:repeat(2,1fr);margin-top:48px;border-top:1px solid rgba(255,255,255,.12);border-left:1px solid rgba(255,255,255,.12)}
+.seo-service-grid article{padding:38px 36px 45px;border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12);min-height:290px}
+.seo-service-grid span{font-size:10px;color:#8e9094;letter-spacing:.12em}
+.seo-service-grid h2{font-size:clamp(30px,3.3vw,52px);line-height:.9;letter-spacing:-.065em;margin:34px 0 25px;font-weight:900}
+.seo-service-grid p{max-width:480px;color:#999ca1;line-height:1.55;font-size:14px;margin:0}
+.seo-process-list{display:grid;grid-template-columns:repeat(4,1fr);margin-top:70px;border-top:1px solid rgba(255,255,255,.12)}
+.seo-process-list>div{padding:28px 24px 0 0;border-right:1px solid rgba(255,255,255,.12);margin-right:24px}
+.seo-process-list>div:last-child{border-right:0;margin-right:0}
+.seo-process-list b{font-size:10px;color:#8e9094;letter-spacing:.12em}
+.seo-process-list h3{font-size:15px;letter-spacing:.02em;margin:30px 0 12px}
+.seo-process-list p{color:#8f9196;font-size:13px;line-height:1.55;margin:0;max-width:230px}
+.seo-work{border-top:1px solid rgba(255,255,255,.07)}
+.seo-work-head{display:flex;justify-content:space-between;align-items:end;margin-top:42px}
+.seo-work-head h2{font-size:clamp(55px,8vw,130px);font-weight:900;letter-spacing:-.08em;line-height:.8;margin:0}
+.seo-work-head a{color:#eee;text-decoration:none;font-size:9px;letter-spacing:.12em;padding-bottom:8px}
+.seo-project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:50px}
+.seo-project-grid a{display:block;color:#eee;text-decoration:none}
+.seo-project-grid img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border:1px solid rgba(255,255,255,.12);transition:transform .5s cubic-bezier(.16,1,.3,1),filter .4s ease}
+.seo-project-grid a:hover img{transform:scale(1.018);filter:brightness(1.08)}
+.seo-project-grid span{display:block;font-size:9px;letter-spacing:.1em;margin-top:13px;color:#aaa}
+.seo-faq{border-top:1px solid rgba(255,255,255,.07)}
+.seo-faq-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:9vw;margin-top:50px}
+.seo-faq-grid h2{font-size:clamp(45px,5.7vw,90px);line-height:.82;letter-spacing:-.07em;margin:0;font-weight:900}
+.seo-faq-list{border-top:1px solid rgba(255,255,255,.12)}
+.seo-faq-list details{border-bottom:1px solid rgba(255,255,255,.12);padding:24px 0}
+.seo-faq-list summary{cursor:pointer;list-style:none;font-size:17px;letter-spacing:-.02em;padding-right:30px;position:relative}
+.seo-faq-list summary::-webkit-details-marker{display:none}
+.seo-faq-list summary:after{content:"+";position:absolute;right:0;top:-2px;color:#8e9094;font-size:18px}
+.seo-faq-list details[open] summary:after{content:"−"}
+.seo-faq-list p{color:#92959a;line-height:1.6;font-size:14px;max-width:700px;margin:17px 0 0}
+.seo-contact{min-height:85vh;padding:125px 7vw 45px;display:flex;flex-direction:column;justify-content:flex-end;border-top:1px solid rgba(255,255,255,.08);background:radial-gradient(ellipse 75% 45% at 50% 50%,rgba(57,65,74,.14),transparent 72%)}
+.seo-contact h2{font-size:clamp(75px,13vw,190px);line-height:.78;letter-spacing:-.09em;margin:40px 0 25px;font-weight:900}
+.seo-contact>p{color:#999;margin:0 0 15px}
+.seo-contact>a{font-size:clamp(25px,4vw,55px);color:#fff;text-decoration:none;letter-spacing:-.04em}
+.seo-contact-bottom{margin-top:100px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:20px}
+.seo-contact-bottom a{color:#777;text-decoration:none;font-size:9px;letter-spacing:.12em}
+.seo-contact-bottom a:hover{color:#fff}
+@media(max-width:900px){
+  .seo-nav{height:70px;padding:0 18px;grid-template-columns:auto 1fr;gap:18px}.seo-nav-links{justify-content:flex-end;gap:14px}.seo-nav-links a{font-size:7px}.seo-nav-cta{display:none}
+  .seo-hero{padding:115px 18px 70px;min-height:auto}.seo-hero-grid{grid-template-columns:1fr;gap:45px;margin-top:28px}.seo-hero h1{font-size:21vw}.seo-lead{font-size:17px;margin-top:30px}.seo-actions{gap:18px;flex-wrap:wrap}.seo-portrait-card{min-height:470px;border-radius:24px}
+  .seo-section{padding:80px 18px}.seo-two-col{grid-template-columns:1fr;gap:35px;margin-top:35px}.seo-two-col h2,.seo-process-head h2{font-size:18vw}.seo-copy{font-size:14px;line-height:1.7}
+  .seo-service-grid{grid-template-columns:1fr;margin-top:35px}.seo-service-grid article{min-height:0;padding:28px 22px 34px}.seo-service-grid h2{font-size:10vw;margin:25px 0 18px}
+  .seo-process-list{grid-template-columns:1fr 1fr;gap:0;margin-top:45px}.seo-process-list>div{min-height:190px;margin:0;padding:22px 18px 18px 0;border-bottom:1px solid rgba(255,255,255,.12)}.seo-process-list>div:nth-child(2){padding-left:18px}.seo-process-list>div:nth-child(odd){border-right:1px solid rgba(255,255,255,.12)}.seo-process-list>div:nth-child(even){border-right:0;margin-right:0}.seo-process-list h3{font-size:12px;margin:22px 0 10px}.seo-process-list p{font-size:11px}
+  .seo-work-head{display:block}.seo-work-head h2{font-size:18vw}.seo-work-head a{display:inline-block;margin-top:22px}.seo-project-grid{grid-template-columns:1fr;margin-top:35px;gap:28px}
+  .seo-faq-grid{grid-template-columns:1fr;gap:35px;margin-top:35px}.seo-faq-grid h2{font-size:17vw}.seo-faq-list summary{font-size:15px}.seo-faq-list p{font-size:13px}
+  .seo-contact{min-height:75vh;padding:85px 18px 30px}.seo-contact h2{font-size:20vw;margin-top:30px}.seo-contact>a{font-size:7vw}.seo-contact-bottom{margin-top:70px}
+}
