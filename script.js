@@ -65,3 +65,25 @@ if(clientsSection){
     video.addEventListener('ended', () => section.classList.remove('is-playing'));
   });
 })();
+
+// V64 — nav contact arrow rotates progressively with page scroll.
+(function(){
+  const arrow = document.querySelector('.nav-arrow');
+  if (!arrow) return;
+  let ticking = false;
+  const updateArrow = () => {
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+    arrow.style.transform = `rotate(${progress * 180}deg)`;
+    ticking = false;
+  };
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(updateArrow);
+      ticking = true;
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', updateArrow, { passive: true });
+  updateArrow();
+})();
