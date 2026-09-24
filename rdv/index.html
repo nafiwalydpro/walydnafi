@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<title>Rendez-vous — Walyd Nafi</title>
+<meta name="description" content="Choisissez un créneau pour prendre rendez-vous avec Walyd Nafi.">
+<link rel="canonical" href="https://walydnafi.fr/rdv/">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="rdv.css">
+</head>
+<body class="project-page rdv-page">
+<div class="noise"></div>
+<header class="project-nav">
+  <a class="project-home" href="../index.html">ACCUEIL</a>
+  <a class="project-brand" href="../index.html">WALYDNAFI</a>
+  <a class="project-all" href="../index.html#contact">← RETOUR</a>
+</header>
+<main class="project-layout rdv-layout">
+  <section class="rdv-copy">
+    <div class="project-number">[ RDV ]</div>
+    <h1 class="project-title">PRENDRE<br>RENDEZ-VOUS</h1>
+    <div class="project-year">2026</div>
+    <div class="project-description">CHOISISSEZ DIRECTEMENT UN CRÉNEAU POUR ÉCHANGER AUTOUR DE VOTRE PROJET.</div>
+    <ul class="project-services">
+      <li>ÉCHANGE EN VISIO</li>
+      <li>30 MINUTES</li>
+      <li>CRÉNEAUX DISPONIBLES</li>
+    </ul>
+    <div class="project-software"><strong>ÉTAPE 01 :</strong> CHOISISSEZ UNE DATE</div>
+  </section>
+  <section class="rdv-calendar" aria-label="Calendrier de rendez-vous">
+    <div class="rdv-calendar-top">
+      <button type="button" id="prevMonth" aria-label="Mois précédent">←</button>
+      <h2 id="monthTitle">—</h2>
+      <button type="button" id="nextMonth" aria-label="Mois suivant">→</button>
+    </div>
+    <div class="rdv-weekdays"><span>LUN</span><span>MAR</span><span>MER</span><span>JEU</span><span>VEN</span><span>SAM</span><span>DIM</span></div>
+    <div class="rdv-grid" id="calendarGrid"></div>
+    <div class="rdv-selected" id="selectedDate">Sélectionnez une date disponible.</div>
+  </section>
+</main>
+<script src="rdv.js"></script>
+</body>
+</html>
