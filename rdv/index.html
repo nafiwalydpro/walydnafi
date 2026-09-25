@@ -38,17 +38,47 @@
   </section>
 </main>
 <script>
-window.addEventListener("message", function(event) {
-  if (event.origin === "https://calendly.com" &&
-      event.data &&
-      event.data.event === "calendly.page_viewed") {
-    var box = document.querySelector(".rdv-calendar");
-    if (box) {
-      box.classList.remove("is-calendly-loading");
-      box.setAttribute("aria-busy", "false");
-    }
+(function(){
+  var box = document.querySelector('.rdv-calendar');
+  var widget = document.querySelector('.calendly-inline-widget');
+  if (!box || !widget) return;
+
+  var revealed = false;
+  function revealCalendly(){
+    if (revealed) return;
+    revealed = true;
+    box.classList.remove('is-calendly-loading');
+    box.setAttribute('aria-busy','false');
   }
-});
+
+  // Calendly's own ready event: reveal only once the booking page has been viewed.
+  window.addEventListener('message', function(event){
+    if (event.origin === 'https://calendly.com' && event.data &&
+        event.data.event === 'calendly.page_viewed') {
+      revealCalendly();
+    }
+  });
+
+  // Fallback: reveal when Calendly's iframe itself finishes loading.
+  var observe = new MutationObserver(function(){
+    var iframe = widget.querySelector('iframe');
+    if (iframe && !iframe.dataset.rdvBound) {
+      iframe.dataset.rdvBound = '1';
+      iframe.addEventListener('load', function(){
+        window.setTimeout(revealCalendly, 180);
+      }, {once:true});
+    }
+  });
+  observe.observe(widget, {childList:true, subtree:true});
+
+  var iframe = widget.querySelector('iframe');
+  if (iframe) {
+    iframe.dataset.rdvBound = '1';
+    iframe.addEventListener('load', function(){
+      window.setTimeout(revealCalendly, 180);
+    }, {once:true});
+  }
+})();
 </script>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async crossorigin="anonymous"></script>
 </body>

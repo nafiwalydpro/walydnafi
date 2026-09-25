@@ -43,7 +43,7 @@
   .rdv-calendar .calendly-inline-widget{height:900px!important;border-radius:12px}
 }
 
-/* V84 — Calendly opening transition */
+/* V85 — Calendly opening transition */
 .rdv-calendar{position:relative}
 .calendly-opening{
   position:absolute;
