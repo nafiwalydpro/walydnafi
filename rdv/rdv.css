@@ -42,3 +42,29 @@
   .rdv-calendar{padding:10px 5px 8px;border-radius:18px}
   .rdv-calendar .calendly-inline-widget{height:900px!important;border-radius:12px}
 }
+
+/* V83 — Calendly loading optimisation */
+.rdv-calendar{position:relative}
+.calendly-loading{
+  position:absolute;
+  inset:26px;
+  z-index:0;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  background:#fff;
+  color:#777;
+  font-family:Aktiv,Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:.12em;
+  pointer-events:none;
+}
+.calendly-inline-widget{position:relative;z-index:1}
+.rdv-calendar.is-calendly-loading .calendly-loading{z-index:2}
+.rdv-calendar:not(.is-calendly-loading) .calendly-loading{display:none}
+@media(max-width:800px){
+  .calendly-loading{inset:18px 18px 18px 18px;border-radius:14px}
+}
+@media(max-width:480px){
+  .calendly-loading{inset:15px 15px 15px 15px;border-radius:12px}
+}

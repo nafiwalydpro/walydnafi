@@ -11,6 +11,12 @@
 <meta name="robots" content="index,follow">
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="rdv.css">
+<link rel="preconnect" href="https://assets.calendly.com" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="dns-prefetch" href="//assets.calendly.com">
+<link rel="dns-prefetch" href="//calendly.com">
+<link rel="preload" href="https://assets.calendly.com/assets/external/widget.js" as="script" crossorigin>
+
 </head>
 <body class="project-page rdv-page">
 <div class="noise"></div>
@@ -25,11 +31,25 @@
     <div class="project-description">CHOISISSEZ DIRECTEMENT UN CRÉNEAU POUR ÉCHANGER AUTOUR DE VOTRE PROJET.</div>
   </section>
 
-  <section class="rdv-calendar" aria-label="Réservation Calendly">
+  <section class="rdv-calendar is-calendly-loading" aria-label="Réservation Calendly" aria-busy="true">
     <div class="calendly-inline-widget" data-url="https://calendly.com/nafiwalydpro/30min" style="min-width:320px;height:760px;"></div>
+<div class="calendly-loading" aria-hidden="true">CHARGEMENT DES CRÉNEAUX…</div>
     <noscript>Veuillez activer JavaScript pour afficher le calendrier de réservation.</noscript>
   </section>
 </main>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+window.addEventListener("message", function(event) {
+  if (event.origin === "https://calendly.com" &&
+      event.data &&
+      event.data.event === "calendly.page_viewed") {
+    var box = document.querySelector(".rdv-calendar");
+    if (box) {
+      box.classList.remove("is-calendly-loading");
+      box.setAttribute("aria-busy", "false");
+    }
+  }
+});
+</script>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async crossorigin="anonymous"></script>
 </body>
 </html>
