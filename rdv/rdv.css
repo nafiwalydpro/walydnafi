@@ -32,3 +32,17 @@
   .rdv-calendar-top button{width:40px;height:40px}
 }
 @media(prefers-reduced-motion:reduce){.rdv-calendar-top button,.rdv-day{transition:none}}
+
+.rdv-slots{border-top:1px solid rgba(255,255,255,.12);margin-top:25px;padding-top:20px}
+.rdv-slots-head{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:12px;font-family:Aktiv,Arial,sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#85878b}
+.rdv-slots-head span:last-child{color:#f4f4f1;text-align:right}
+.rdv-slots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.rdv-slot{min-height:46px;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:rgba(255,255,255,.035);color:#eee;font-family:Aktiv,Arial,sans-serif;font-size:11px;letter-spacing:.03em;cursor:pointer;transition:.25s}
+.rdv-slot:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3)}
+.rdv-slot.selected{background:#f4f4f1;color:#0b0b0c;border-color:#fff;box-shadow:0 8px 28px rgba(255,255,255,.08)}
+@media(max-width:800px){
+  .rdv-slots-head{align-items:flex-start;flex-direction:column;gap:6px}
+  .rdv-slots-head span:last-child{text-align:left}
+  .rdv-slots-grid{grid-template-columns:repeat(3,1fr);gap:7px}
+  .rdv-slot{min-height:44px}
+}

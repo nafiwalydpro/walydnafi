@@ -30,7 +30,7 @@
       <li>30 MINUTES</li>
       <li>CRÉNEAUX DISPONIBLES</li>
     </ul>
-    <div class="project-software"><strong>ÉTAPE 01 :</strong> CHOISISSEZ UNE DATE</div>
+    <div class="project-software"><strong>ÉTAPE 01 :</strong> CHOISISSEZ UNE DATE · PUIS UNE HEURE</div>
   </section>
   <section class="rdv-calendar" aria-label="Calendrier de rendez-vous">
     <div class="rdv-calendar-top">
@@ -41,6 +41,13 @@
     <div class="rdv-weekdays"><span>LUN</span><span>MAR</span><span>MER</span><span>JEU</span><span>VEN</span><span>SAM</span><span>DIM</span></div>
     <div class="rdv-grid" id="calendarGrid"></div>
     <div class="rdv-selected" id="selectedDate">Sélectionnez une date disponible.</div>
+    <div class="rdv-slots" id="rdvSlots" hidden aria-label="Créneaux horaires">
+      <div class="rdv-slots-head">
+        <span>CRÉNEAUX DISPONIBLES</span>
+        <span id="slotDateLabel"></span>
+      </div>
+      <div class="rdv-slots-grid" id="slotsGrid"></div>
+    </div>
   </section>
 </main>
 <script src="rdv.js"></script>
