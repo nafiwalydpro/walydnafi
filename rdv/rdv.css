@@ -21,3 +21,24 @@
   .rdv-calendar-label{padding:2px 6px 14px}
   .calendly-inline-widget{height:900px!important;border-radius:14px}
 }
+
+/* MOBILE — optimisation spécifique à la page RDV, sans modifier le desktop */
+@media (max-width: 800px){
+  .rdv-page{overflow-x:hidden}
+  .rdv-page .project-nav{padding-left:18px;padding-right:18px}
+  .rdv-layout{width:100%;box-sizing:border-box}
+  .rdv-copy{width:100%;box-sizing:border-box;padding-bottom:28px}
+  .rdv-copy .project-description{font-size:11px;line-height:1.45;max-width:330px}
+  .rdv-calendar{width:100%;box-sizing:border-box;margin:0;padding:12px 8px 10px}
+  .rdv-calendar .calendly-inline-widget{width:100%!important;min-width:0!important;height:920px!important}
+}
+
+@media (max-width: 480px){
+  .rdv-page .project-nav{padding-left:14px;padding-right:14px}
+  .rdv-layout{padding:70px 14px 30px;gap:0}
+  .rdv-copy{padding-bottom:24px}
+  .rdv-page .project-title{font-size:clamp(38px,12.5vw,58px);line-height:.88;letter-spacing:-.035em}
+  .rdv-copy .project-description{font-size:10px;line-height:1.5;max-width:300px}
+  .rdv-calendar{padding:10px 5px 8px;border-radius:18px}
+  .rdv-calendar .calendly-inline-widget{height:900px!important;border-radius:12px}
+}
