@@ -9,13 +9,13 @@
 <meta name="description" content="Choisissez un créneau pour prendre rendez-vous avec Walyd Nafi autour de votre projet 3D.">
 <link rel="canonical" href="https://walydnafi.fr/rdv/">
 <meta name="robots" content="index,follow">
-<link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="rdv.css">
+<link rel="stylesheet" href="../style.css?v=86">
+<link rel="stylesheet" href="rdv-v86.css?v=86">
 <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
 <link rel="preconnect" href="https://calendly.com" crossorigin>
 <link rel="dns-prefetch" href="//assets.calendly.com">
 <link rel="dns-prefetch" href="//calendly.com">
-<link rel="preload" href="https://assets.calendly.com/assets/external/widget.js" as="script" crossorigin>
+<link rel="preload" href="https://assets.calendly.com/assets/external/widget.js?v=86" as="script" crossorigin>
 
 </head>
 <body class="project-page rdv-page">
@@ -31,55 +31,13 @@
     <div class="project-description">CHOISISSEZ DIRECTEMENT UN CRÉNEAU POUR ÉCHANGER AUTOUR DE VOTRE PROJET.</div>
   </section>
 
-  <section class="rdv-calendar is-calendly-loading" aria-label="Réservation Calendly" aria-busy="true">
+  <section class="rdv-calendar " aria-label="Réservation Calendly">
     <div class="calendly-inline-widget" data-url="https://calendly.com/nafiwalydpro/30min" style="min-width:320px;height:760px;"></div>
 <div class="calendly-opening" aria-hidden="true"><span>PRISE DE RDV</span></div>
     <noscript>Veuillez activer JavaScript pour afficher le calendrier de réservation.</noscript>
   </section>
 </main>
-<script>
-(function(){
-  var box = document.querySelector('.rdv-calendar');
-  var widget = document.querySelector('.calendly-inline-widget');
-  if (!box || !widget) return;
 
-  var revealed = false;
-  function revealCalendly(){
-    if (revealed) return;
-    revealed = true;
-    box.classList.remove('is-calendly-loading');
-    box.setAttribute('aria-busy','false');
-  }
-
-  // Calendly's own ready event: reveal only once the booking page has been viewed.
-  window.addEventListener('message', function(event){
-    if (event.origin === 'https://calendly.com' && event.data &&
-        event.data.event === 'calendly.page_viewed') {
-      revealCalendly();
-    }
-  });
-
-  // Fallback: reveal when Calendly's iframe itself finishes loading.
-  var observe = new MutationObserver(function(){
-    var iframe = widget.querySelector('iframe');
-    if (iframe && !iframe.dataset.rdvBound) {
-      iframe.dataset.rdvBound = '1';
-      iframe.addEventListener('load', function(){
-        window.setTimeout(revealCalendly, 180);
-      }, {once:true});
-    }
-  });
-  observe.observe(widget, {childList:true, subtree:true});
-
-  var iframe = widget.querySelector('iframe');
-  if (iframe) {
-    iframe.dataset.rdvBound = '1';
-    iframe.addEventListener('load', function(){
-      window.setTimeout(revealCalendly, 180);
-    }, {once:true});
-  }
-})();
-</script>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js?v=86" async crossorigin="anonymous"></script>
 </body>
 </html>
