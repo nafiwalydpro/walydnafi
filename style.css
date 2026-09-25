@@ -1433,3 +1433,8 @@ body::before{
   }
 }
 .project-card.project-with-image:hover .project-media{transform:none !important;}
+
+/* Instagram PNG */
+.hero-topline a,.instagram-link{display:inline-flex;align-items:center;gap:8px}
+.instagram-png{width:14px;height:14px;object-fit:contain;display:inline-block;flex:0 0 auto}
+.instagram-png-bottom{width:15px;height:15px}
