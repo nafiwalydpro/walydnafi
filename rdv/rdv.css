@@ -1,48 +1,23 @@
-/* RDV — même langage visuel que les pages projets */
+/* RDV — Calendly intégré, même langage visuel que les pages projets */
 .rdv-page{background:#17181b;color:#f4f4f4}
-.rdv-layout{grid-template-columns:minmax(280px,1fr) minmax(420px,1.08fr);gap:5vw}
-.rdv-copy{align-self:center}
+.rdv-layout{grid-template-columns:minmax(280px,1fr) minmax(460px,1.18fr);gap:5vw;align-items:start}
+.rdv-copy{align-self:center;padding-top:8vh}
 .rdv-copy .project-description{max-width:480px}
 .rdv-copy .project-services{max-width:520px}
-.rdv-calendar{align-self:center;border:1px solid rgba(255,255,255,.18);border-radius:30px;padding:30px;background:linear-gradient(120deg,rgba(255,255,255,.09),rgba(90,98,108,.055) 45%,rgba(0,0,0,.24));box-shadow:inset 0 1px 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(0,0,0,.45),0 18px 45px rgba(0,0,0,.22);backdrop-filter:blur(24px) saturate(115%);-webkit-backdrop-filter:blur(24px) saturate(115%)}
-.rdv-calendar-top{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:18px;margin-bottom:26px}
-.rdv-calendar-top h2{text-align:center;font-family:Aktiv,Arial,sans-serif;font-size:15px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin:0}
-.rdv-calendar-top button{width:44px;height:44px;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:rgba(255,255,255,.035);color:#fff;font-family:Aktiv,Arial,sans-serif;font-size:16px;cursor:pointer;transition:.25s}
-.rdv-calendar-top button:hover:not(:disabled){background:#fff;color:#0a0a0b;border-color:#fff}
-.rdv-calendar-top button:disabled{opacity:.18;cursor:not-allowed}
-.rdv-weekdays,.rdv-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}
-.rdv-weekdays{margin-bottom:7px}
-.rdv-weekdays span{text-align:center;font-family:Aktiv,Arial,sans-serif;font-size:8px;letter-spacing:.12em;color:#85878b;padding:7px 0}
-.rdv-day{aspect-ratio:1;border:1px solid transparent;border-radius:13px;background:rgba(255,255,255,.035);color:#eee;cursor:pointer;font-family:Aktiv,Arial,sans-serif;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;position:relative;transition:.25s}
-.rdv-day:hover:not(:disabled){background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28)}
-.rdv-day:disabled{opacity:.16;cursor:not-allowed}
-.rdv-day.other{opacity:.035}
-.rdv-day.today:after{content:'';position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;bottom:8px}
-.rdv-day.selected{background:#f4f4f1;color:#0b0b0c;border-color:#fff;box-shadow:0 8px 28px rgba(255,255,255,.08)}
-.rdv-selected{border-top:1px solid rgba(255,255,255,.12);margin-top:25px;padding-top:18px;font-family:Aktiv,Arial,sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#85878b}
-.rdv-selected.has-date{color:#f4f4f1}
+.rdv-calendar{align-self:start;margin-top:2vh;min-width:0;border:1px solid rgba(255,255,255,.18);border-radius:30px;padding:26px;background:linear-gradient(120deg,rgba(255,255,255,.09),rgba(90,98,108,.055) 45%,rgba(0,0,0,.24));box-shadow:inset 0 1px 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(0,0,0,.45),0 18px 45px rgba(0,0,0,.22);backdrop-filter:blur(24px) saturate(115%);-webkit-backdrop-filter:blur(24px) saturate(115%);overflow:hidden}
+.rdv-calendar-label{font-family:Aktiv,Arial,sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#85878b;padding:2px 4px 18px}
+.calendly-inline-widget{width:100%;min-width:320px;height:760px!important;border-radius:18px;overflow:hidden;background:#fff}
+.rdv-calendar noscript{display:block;padding:24px 4px;font-family:Aktiv,Arial,sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#85878b}
+@media(max-width:1000px){
+  .rdv-layout{grid-template-columns:1fr;gap:36px}
+  .rdv-copy{padding-top:0}
+  .rdv-calendar{margin-top:0}
+}
 @media(max-width:800px){
   .rdv-layout{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:92px 18px 42px}
   .rdv-copy{padding-bottom:34px}
   .rdv-page .project-title{font-size:clamp(42px,13vw,72px);line-height:.86;margin:0}
-  .rdv-calendar{padding:22px 16px;border-radius:22px}
-  .rdv-weekdays,.rdv-grid{gap:5px}
-  .rdv-day{border-radius:10px;font-size:11px}
-  .rdv-calendar-top{margin-bottom:20px}
-  .rdv-calendar-top button{width:40px;height:40px}
-}
-@media(prefers-reduced-motion:reduce){.rdv-calendar-top button,.rdv-day{transition:none}}
-
-.rdv-slots{border-top:1px solid rgba(255,255,255,.12);margin-top:25px;padding-top:20px}
-.rdv-slots-head{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:12px;font-family:Aktiv,Arial,sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#85878b}
-.rdv-slots-head span:last-child{color:#f4f4f1;text-align:right}
-.rdv-slots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.rdv-slot{min-height:46px;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:rgba(255,255,255,.035);color:#eee;font-family:Aktiv,Arial,sans-serif;font-size:11px;letter-spacing:.03em;cursor:pointer;transition:.25s}
-.rdv-slot:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3)}
-.rdv-slot.selected{background:#f4f4f1;color:#0b0b0c;border-color:#fff;box-shadow:0 8px 28px rgba(255,255,255,.08)}
-@media(max-width:800px){
-  .rdv-slots-head{align-items:flex-start;flex-direction:column;gap:6px}
-  .rdv-slots-head span:last-child{text-align:left}
-  .rdv-slots-grid{grid-template-columns:repeat(3,1fr);gap:7px}
-  .rdv-slot{min-height:44px}
+  .rdv-calendar{padding:18px 10px;border-radius:22px}
+  .rdv-calendar-label{padding:2px 6px 14px}
+  .calendly-inline-widget{height:900px!important;border-radius:14px}
 }

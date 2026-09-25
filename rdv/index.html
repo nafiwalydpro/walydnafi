@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <title>Rendez-vous — Walyd Nafi</title>
-<meta name="description" content="Choisissez un créneau pour prendre rendez-vous avec Walyd Nafi.">
+<meta name="description" content="Choisissez un créneau pour prendre rendez-vous avec Walyd Nafi autour de votre projet 3D.">
 <link rel="canonical" href="https://walydnafi.fr/rdv/">
 <meta name="robots" content="index,follow">
 <link rel="stylesheet" href="../style.css">
@@ -28,28 +28,17 @@
     <ul class="project-services">
       <li>ÉCHANGE EN VISIO</li>
       <li>30 MINUTES</li>
-      <li>CRÉNEAUX DISPONIBLES</li>
+      <li>GOOGLE MEET</li>
     </ul>
-    <div class="project-software"><strong>ÉTAPE 01 :</strong> CHOISISSEZ UNE DATE · PUIS UNE HEURE</div>
+    <div class="project-software"><strong>ÉTAPE 01 :</strong> CHOISISSEZ UNE DATE · PUIS UN CRÉNEAU DISPONIBLE</div>
   </section>
-  <section class="rdv-calendar" aria-label="Calendrier de rendez-vous">
-    <div class="rdv-calendar-top">
-      <button type="button" id="prevMonth" aria-label="Mois précédent">←</button>
-      <h2 id="monthTitle">—</h2>
-      <button type="button" id="nextMonth" aria-label="Mois suivant">→</button>
-    </div>
-    <div class="rdv-weekdays"><span>LUN</span><span>MAR</span><span>MER</span><span>JEU</span><span>VEN</span><span>SAM</span><span>DIM</span></div>
-    <div class="rdv-grid" id="calendarGrid"></div>
-    <div class="rdv-selected" id="selectedDate">Sélectionnez une date disponible.</div>
-    <div class="rdv-slots" id="rdvSlots" hidden aria-label="Créneaux horaires">
-      <div class="rdv-slots-head">
-        <span>CRÉNEAUX DISPONIBLES</span>
-        <span id="slotDateLabel"></span>
-      </div>
-      <div class="rdv-slots-grid" id="slotsGrid"></div>
-    </div>
+
+  <section class="rdv-calendar" aria-label="Réservation Calendly">
+    <div class="rdv-calendar-label">RÉSERVER UN CRÉNEAU</div>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/nafiwalydpro/30min" style="min-width:320px;height:760px;"></div>
+    <noscript>Veuillez activer JavaScript pour afficher le calendrier de réservation.</noscript>
   </section>
 </main>
-<script src="rdv.js"></script>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
