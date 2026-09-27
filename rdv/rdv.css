@@ -42,8 +42,3 @@
   .rdv-calendar{padding:10px 5px 8px;border-radius:18px}
   .rdv-calendar .calendly-inline-widget{height:900px!important;border-radius:12px}
 }
-
-/* V88 — Calendly direct iframe: no intermediate widget.js loading step */
-.calendly-iframe{display:block;width:100%;min-width:320px;height:760px;border:0;border-radius:18px;overflow:hidden;background:#fff}
-@media(max-width:800px){.calendly-iframe{width:100%;min-width:0;height:920px;border-radius:14px}}
-@media(max-width:480px){.calendly-iframe{height:900px;border-radius:12px}}

@@ -11,8 +11,6 @@
 <meta name="robots" content="index,follow">
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="rdv.css">
-<link rel="preconnect" href="https://calendly.com" crossorigin>
-<link rel="dns-prefetch" href="//calendly.com">
 </head>
 <body class="project-page rdv-page">
 <div class="noise"></div>
@@ -28,10 +26,10 @@
   </section>
 
   <section class="rdv-calendar" aria-label="Réservation Calendly">
-    <iframe class="calendly-iframe" src="https://calendly.com/nafiwalydpro/30min?embed_domain=walydnafi.fr&embed_type=Inline" title="Prise de rendez-vous" style="width:100%;min-width:320px;height:760px;border:0;border-radius:18px;overflow:hidden;background:#fff" frameborder="0" loading="eager"></iframe>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/nafiwalydpro/30min" style="min-width:320px;height:760px;"></div>
     <noscript>Veuillez activer JavaScript pour afficher le calendrier de réservation.</noscript>
   </section>
 </main>
-
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
