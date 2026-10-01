@@ -1438,3 +1438,42 @@ body::before{
 .hero-topline a,.instagram-link{display:inline-flex;align-items:center;gap:8px}
 .instagram-png{width:14px;height:14px;object-fit:contain;display:inline-block;flex:0 0 auto}
 .instagram-png-bottom{width:15px;height:15px}
+
+/* Bouton de rendez-vous toujours accessible pendant le scroll. */
+.sticky-rdv-button{
+  position:fixed;
+  right:calc(24px + env(safe-area-inset-right, 0px));
+  bottom:calc(24px + env(safe-area-inset-bottom, 0px));
+  z-index:40;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  min-height:48px;
+  padding:16px 24px;
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:999px;
+  background:#f4f4f4;
+  color:#17181b;
+  box-shadow:0 8px 30px rgba(0,0,0,.3);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-decoration:none;
+  transition:transform .2s ease,background .2s ease;
+}
+.sticky-rdv-button span{font-size:20px;line-height:1}
+.sticky-rdv-button:hover{transform:translateY(-3px);background:#fff}
+.sticky-rdv-button:focus-visible{outline:3px solid #17181b;outline-offset:3px;box-shadow:0 0 0 6px #f4f4f4}
+@media(max-width:800px){
+  .sticky-rdv-button{
+    right:calc(16px + env(safe-area-inset-right, 0px));
+    bottom:calc(16px + env(safe-area-inset-bottom, 0px));
+    padding:14px 20px;
+    gap:14px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .sticky-rdv-button{transition:none}
+  .sticky-rdv-button:hover{transform:none}
+}
