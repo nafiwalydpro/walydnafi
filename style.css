@@ -1477,3 +1477,61 @@ body::before{
   .sticky-rdv-button{transition:none}
   .sticky-rdv-button:hover{transform:none}
 }
+
+/* Mobile audit — keep content inside the viewport and controls easy to tap. */
+@media(max-width:900px){
+  .seo-hero-grid,.seo-two-col,.seo-faq-grid{grid-template-columns:minmax(0,1fr)}
+  .seo-hero-grid>*,.seo-two-col>*,.seo-faq-grid>*{min-width:0}
+  .seo-hero h1{font-size:clamp(36px,12vw,92px);line-height:.92}
+  .seo-two-col h2,.seo-process-head h2,.seo-faq-grid h2{font-size:clamp(34px,13vw,90px);line-height:.95}
+  .seo-work-head h2{font-size:clamp(32px,11.5vw,80px);line-height:1}
+  .seo-contact h2{font-size:clamp(36px,14vw,96px);line-height:.95}
+  .seo-contact>a{font-size:clamp(14px,5.3vw,28px);overflow-wrap:anywhere}
+  .seo-nav{gap:10px}
+  .seo-nav-links{gap:10px}
+  .seo-nav-links a{font-size:9px;letter-spacing:0;display:inline-flex;align-items:center;min-height:44px}
+  .seo-nav-name{font-size:14px;white-space:nowrap}
+  .seo-pill,.seo-text-link,.seo-work-head>a,.seo-contact-bottom a{min-height:44px;display:inline-flex;align-items:center}
+  .seo-contact-bottom{gap:16px;flex-wrap:wrap}
+  .seo-faq-list summary{padding-top:16px;padding-bottom:16px}
+  .seo-process-list>div:nth-child(even){padding-left:18px}
+}
+@media(max-width:800px){
+  html{scroll-padding-top:88px}
+  .nav-links a{font-size:10px;min-height:44px;display:inline-flex;align-items:center}
+  .hero-role{top:92px;left:18px;right:18px;white-space:normal;max-width:100%;line-height:1.5}
+  .hero-topline{top:120px;left:18px;right:auto}
+  .hero-title{top:170px}
+  .hero-copy{font-size:12px;line-height:1.65}
+  .hero-clients .client-row{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .projects-head h2{font-size:16.5vw;line-height:.9}
+  .p-meta{flex-direction:column;align-items:flex-start;gap:6px}
+  .p-meta span{border-left:0;padding-left:0;font-size:6px}
+  .service-list>div{grid-template-columns:28px minmax(0,1fr)}
+  .service-list h3{font-size:clamp(23px,6.5vw,32px);line-height:1.1}
+  .service-list p,.projects-head p{font-size:12px}
+  .contact-title{font-size:17vw;line-height:.95}
+  .contact{padding-bottom:110px}
+  .contact>p{font-size:13px}
+  .contact-bottom{font-size:10px}
+  .pill,.contact-rdv-button{min-height:44px}
+  .project-page .project-nav{grid-template-columns:auto minmax(0,1fr) auto;gap:10px}
+  .project-page .project-nav a{min-height:44px;display:inline-flex;align-items:center}
+  .project-page .project-all{max-width:112px;text-align:right;line-height:1.5}
+  .project-copy{min-width:0;align-self:stretch}
+  .project-page .project-video{width:min(100%,430px,40.5svh);max-height:none;height:auto}
+  .project-description,.project-services,.project-software{font-size:13px;line-height:1.55}
+  .project-page .project-title{overflow-wrap:anywhere}
+}
+@media(max-width:900px) and (max-height:500px) and (orientation:landscape){
+  .seo-portrait-card{min-height:0;height:70svh}
+  .seo-hero,.seo-section{padding-top:95px;padding-bottom:48px}
+  .project-layout{padding-top:110px}
+  .project-copy{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal,.client-logo{opacity:1;transform:none;transition:none}
+}
+
+button[data-cal-link]{font-family:inherit;cursor:pointer}
