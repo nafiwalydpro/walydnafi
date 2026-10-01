@@ -1,60 +1,10 @@
-/* RDV — Cal.com grand format paysage */
+/* Rendez-vous — ouverture du calendrier dans une popup Cal.com. */
 .rdv-page{background:#17181b;color:#f4f4f4}
-.rdv-layout{
-  display:block;
-  width:100%;
-  max-width:none;
-  box-sizing:border-box;
-  padding:58px 8vw 70px;
-}
-.rdv-calendar{
-  width:100%;
-  max-width:1240px;
-  height:600px;
-  margin:0 auto;
-  padding:0;
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:0;
-  background:#fff;
-  overflow:hidden;
-  box-shadow:0 18px 45px rgba(0,0,0,.22);
-}
-#my-cal-inline-30min{
-  width:100%!important;
-  height:100%!important;
-  min-height:600px!important;
-  overflow:auto!important;
-  background:#fff;
-}
-.rdv-calendar noscript{display:block;padding:24px;font-family:Aktiv,Arial,sans-serif;font-size:10px;color:#85878b}
-
-@media(max-width:1000px){
-  .rdv-layout{padding:42px 32px 54px}
-  .rdv-calendar{height:650px}
-  #my-cal-inline-30min{min-height:650px!important}
-}
-
+.rdv-layout{display:block;padding:110px 8vw 80px;min-height:80vh}
+.rdv-copy{max-width:900px;margin:0 auto}
+.rdv-copy .project-title{font-size:clamp(42px,8vw,110px)}
+.rdv-copy .project-description{max-width:480px;margin-top:32px}
 @media(max-width:800px){
-  .rdv-page{overflow-x:hidden}
   .rdv-page .project-nav{padding-left:18px;padding-right:18px}
-  .rdv-layout{padding:28px 18px 40px}
-  .rdv-calendar{height:820px;width:100%}
-  #my-cal-inline-30min{min-height:820px!important}
-}
-
-@media(max-width:480px){
-  .rdv-page .project-nav{padding-left:14px;padding-right:14px}
-  .rdv-layout{padding:20px 14px 30px}
-  .rdv-calendar{height:860px}
-  #my-cal-inline-30min{min-height:860px!important}
-}
-
-/* V92 — espace entre le header et le calendrier Cal.com */
-.rdv-calendar {
-  margin-top: 48px !important;
-}
-@media (max-width: 800px) {
-  .rdv-calendar {
-    margin-top: 32px !important;
-  }
+  .rdv-layout{padding:90px 18px 48px}
 }
