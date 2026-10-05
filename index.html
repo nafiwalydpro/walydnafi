@@ -28,6 +28,16 @@
 {"@type":"WebSite","@id":"https://walydnafi.fr/#website","url":"https://walydnafi.fr/","name":"WALYD NAFI","publisher":{"@id":"https://walydnafi.fr/#person"},"inLanguage":"fr-FR"}
 ]}
 </script>
+<style>
+/* V87 — landing page mobile only: portrait fade and booking icon. */
+@media (max-width:800px){
+  #home .hero-portrait img{
+    -webkit-mask-image:linear-gradient(to bottom,#000 65%,rgba(0,0,0,.95) 72%,rgba(0,0,0,.7) 82%,rgba(0,0,0,.3) 92%,transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 65%,rgba(0,0,0,.95) 72%,rgba(0,0,0,.7) 82%,rgba(0,0,0,.3) 92%,transparent 100%);
+  }
+  body > .sticky-rdv-button > span[aria-hidden="true"]{display:none;}
+}
+</style>
 </head>
 <body>
 <div class="noise"></div>
