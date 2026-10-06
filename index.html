@@ -29,9 +29,17 @@
 ]}
 </script>
 <style>
-/* V87 — landing page mobile only: portrait fade and booking icon. */
+/* V88 — mobile landing: static portrait, clean transparent edges and fade. */
 @media (max-width:800px){
+  #home .hero-portrait{
+    transform:translateX(-50%);
+    will-change:auto;
+  }
+  #home .hero-portrait::before{display:none;}
   #home .hero-portrait img{
+    animation:none;
+    transform:none;
+    filter:grayscale(1) contrast(1.08) brightness(.90);
     -webkit-mask-image:linear-gradient(to bottom,#000 65%,rgba(0,0,0,.95) 72%,rgba(0,0,0,.7) 82%,rgba(0,0,0,.3) 92%,transparent 100%);
     mask-image:linear-gradient(to bottom,#000 65%,rgba(0,0,0,.95) 72%,rgba(0,0,0,.7) 82%,rgba(0,0,0,.3) 92%,transparent 100%);
   }
