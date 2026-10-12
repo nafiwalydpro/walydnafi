@@ -1556,3 +1556,7 @@ img{height:auto}
 .hero-clients .client-logo:not(.client-reveal){opacity:1;transform:none}
 /* An opaque base prevents previous cards bleeding through without backdrop blur. */
 .project-card.project-with-image{background-color:#23262a}
+
+/* HORLOGERIE 3D — preserve the supplied landscape images without distortion. */
+.project-horlogerie-3d .project-gallery figure { aspect-ratio:20/9!important; background:#d6d8d8!important; }
+.project-horlogerie-3d .project-gallery figure img { width:100%!important; height:100%!important; object-fit:contain!important; transform:none!important; }
