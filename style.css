@@ -1564,4 +1564,4 @@ img{height:auto}
 /* Keep the transparent hero portrait free of rectangular shadow artifacts. */
 #home .hero-portrait { border:0; outline:0; box-shadow:none; background:transparent; }
 #home .hero-portrait::before { display:none; }
-#home .hero-portrait img { border:0; outline:0; box-shadow:none; background:transparent; filter:grayscale(1) contrast(1.07) brightness(.91); }
+#home .hero-portrait img { border:0; outline:0; box-shadow:none; background:transparent; filter:grayscale(1) contrast(1.07) brightness(.91)!important; }
