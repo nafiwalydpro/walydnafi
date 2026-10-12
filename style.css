@@ -1560,3 +1560,8 @@ img{height:auto}
 /* HORLOGERIE 3D — preserve the supplied landscape images without distortion. */
 .project-horlogerie-3d .project-gallery figure { aspect-ratio:20/9!important; background:#d6d8d8!important; }
 .project-horlogerie-3d .project-gallery figure img { width:100%!important; height:100%!important; object-fit:contain!important; transform:none!important; }
+
+/* Keep the transparent hero portrait free of rectangular shadow artifacts. */
+#home .hero-portrait { border:0; outline:0; box-shadow:none; background:transparent; }
+#home .hero-portrait::before { display:none; }
+#home .hero-portrait img { border:0; outline:0; box-shadow:none; background:transparent; filter:grayscale(1) contrast(1.07) brightness(.91); }
